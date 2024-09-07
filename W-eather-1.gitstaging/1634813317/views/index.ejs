@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>W-eather</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/navbar.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/index.css"/>
+    <!-- Icons -->
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css"> <!-- Font Awesome -->
+    <!-- Fonts -->
+
+    <!-- Logo -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/logo/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/logo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/logo/favicon-16x16.png">
+    <link rel="manifest" href="/images/logo/site.webmanifest">
+  </head>
+  <body>
+
+    <!-- Navbar -->
+
+      <header>
+        <div class="container">
+          <nav>
+            <div class="menu-icons">
+              <i class="icon ion-md-menu"></i>
+              <i class="icon ion-md-close"></i>
+            </div>
+            <a href="#" class="logo">
+              <i class="icon fas fa-cloud"></i>
+            </a>
+            <ul class="nav-list">
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#">Popular Places
+                  <i class="icon ion-md-arrow-dropdown"></i>
+                </a>
+                <ul class="sub-menu">
+                  <li>
+                    <a href="#">Europe
+                      <i class="icon ion-md-arrow-dropdown"></i>
+                    </a>
+                    <ul class="sub-menu">
+                      <li>
+                        <a href="#">Spain</a>
+                      </li>
+                      <li>
+                        <a href="#">France</a>
+                      </li>
+                      <li>
+                        <a href="#">United Kingdom</a>
+                      </li>
+                      <li>
+                        <a href="#">More
+                          <i class="icon ion-md-arrow-dropdown"></i>
+                        </a>
+                        <ul class="sub-menu">
+                          <li>
+                            <a href="#">Italy</a>
+                          </li>
+                          <li>
+                            <a href="#">Greece</a>
+                          </li>
+                          <li>
+                            <a href="#">Germany</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#">America
+                      <i class="icon ion-md-arrow-dropdown"></i>
+                    </a>
+                    <ul class="sub-menu">
+                      <li>
+                        <a href="#">North America
+                          <i class="icon ion-md-arrow-dropdown"></i>
+                        </a>
+                        <ul class="sub-menu">
+                          <li>
+                            <a href="#">Washington D.C.</a>
+                          </li>
+                          <li>
+                            <a href="#">California</a>
+                          </li>
+                          <li>
+                            <a href="#">Asia</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a href="#">South America
+                          <i class="icon ion-md-arrow-dropdown"></i>
+                        </a>
+                        <ul class="sub-menu">
+                          <li>
+                            <a href="#">Brazil</a>
+                          </li>
+                          <li>
+                            <a href="#">Argentina</a>
+                          </li>
+                          <li>
+                            <a href="#">Columbia</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#">Asia
+                      <i class="icon ion-md-arrow-dropdown"></i>
+                    </a>
+                    <ul class="sub-menu">
+                      <li>
+                        <a href="#">China</a>
+                      </li>
+                      <li>
+                        <a href="#">Japan</a>
+                      </li>
+                      <li>
+                        <a href="#">Malaysia</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="/about-us">About Us</a>
+              </li>
+              <li>
+                <a href="#">OpenWeather API</a>
+              </li>
+              <li>
+                <a href="#">Contact Us</a>
+              </li>
+              <li class="move-right btn">
+                <a href="https://openweathermap.org/">Visit OpenWeather</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+    <!-- End Navbar-->
+
+    <div class="content">
+      <fieldset>
+        <form id="form" method="post">
+          <input type="text" name="city" class="city-input" placeholder="Enter your city name" required>
+          <input type="submit" class="city-submit" value="Find">
+        </form>
+
+          <!-- Upon fetching of data you will display it -->
+          <%if( weather !== null){ %>
+                  <div class="header">
+                    <span class="title"><%= place %></span><br>
+                    <span class="sub-title"><%= timezone %></span>
+                  </div><br>
+                  <div class="content-content">
+                    <div class="section-1">
+                      <span class="content-title">Temperature</span><br>
+                      <span class="content-text"><%= temp %>°C / <%= fahrenheit %>°F</span>
+                      <br><br>
+                      <span class="content-title">Main</span><br>
+                      <span class="content-text"><%= main %></span>
+                    </div>
+                    <div class="section-2">
+                      <span class="content-header">Description</span>
+                      <br><br>
+                      <span class="content-title">Ovarall Description: </span><br>
+                      <span class="content-text"><%= description %></span>
+                      <br><br>
+                      <span class="content-title">Cloud Coverage: </span><br>
+                      <span class="content-text"><%= clouds %>%</span>
+                      <br><br>
+                      <span class="content-title">Visibility: </span>
+                      <span class="content-text"><%= visibility %> meters</span>
+                    </div>
+                    <div class="section-3">
+                      <span class="content-header">Other Information</span>
+                      <br><br>
+                      <span class="content-title">Humidity</span><br>
+                      <span class="content-text"><%= humidity %> g.m-3</span>
+                      <br><br>
+                      <span class="content-title">Pressure: </span>
+                      <span class="content-text"><%= pressure %> N·m−2</span>
+                    </div>
+                  </div>
+              
+          <% } %>
+              <% if(error !== null){ %>
+              <p>
+                <%= error %>
+              </p>
+          <% } %>
+        </fieldset>
+      </div>
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/redirects.js"></script>
+    <script src="js/all.min.js"></script>
+  </body>
+</html>

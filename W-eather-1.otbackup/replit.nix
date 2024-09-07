@@ -1,0 +1,1 @@
+[{"ops":[{"insert":"{ pkgs }: {\n\tdeps = [\n\t\tpkgs.nodejs-12_x\n\t\tpkgs.nodePackages.typescript-language-server\n\t\tpkgs.yarn\n\t\tpkgs.replitPackages.jest\n\t];\n}"}],"crc32":4188701587,"timestamp":1661221751,"tsString":"2022-08-23 2:48:37.0 +00:00:00","version":1}]

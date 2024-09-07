@@ -1,0 +1,1 @@
+[{"ops":[{"insert":"console.log(`Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com\nLicense - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)\n`)"}],"crc32":2795553011,"timestamp":1634626123,"tsString":"2021-10-19 6:48:37.0 +00:00:00","version":1}]
